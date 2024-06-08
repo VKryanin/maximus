@@ -54,9 +54,30 @@ const marksCollection = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+// const filterByMarkAndModel = (req, res, next) => {
+//   const { mark, models } = req.body;
+//   const filter = {};
+
+//   if (mark) {
+//     filter.mark = new RegExp(mark, "i");
+//   }
+
+//   if (Array.isArray(models) && models.length > 0) {
+//     filter.model = { $in: models };
+//   }
+
+//   Stock.db("hrTest")
+//     .collection("stock")
+//     .find(filter)
+//     .toArray()
+//     .then((items) => res.send({ data: items }))
+//     .catch((err) => next(err));
+// };
+
 module.exports = {
   getAllCollection,
   filterCollection,
   getOne,
   marksCollection,
+  // filterByMarkAndModel,
 };

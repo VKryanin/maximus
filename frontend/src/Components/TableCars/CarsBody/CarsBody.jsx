@@ -4,6 +4,7 @@ import CarsRow from "../CarsRow/CarsRow";
 import Text from '../../../ui/Text';
 import { useEffect } from "react";
 import { getCars } from '../../../store/carsSlice/carsSlice'
+import LoadingSpinner from "../../../ui/LoadingSpinner";
 
 const CarsBody = () => {
   const { list, page, pageSize } = useSelector(({ cars }) => cars);
@@ -26,9 +27,7 @@ const CarsBody = () => {
           <CarsRow key={item._id} item={item} />
         ))
       ) : (
-        <Text fontSize="18px" margin="10px">
-          Данных нет...
-        </Text>
+        <LoadingSpinner position='static' />
       )}
     </TableBody>
   );

@@ -5,15 +5,15 @@ import Table from "../../ui/Table/Table";
 import CarsHead from './CarsHead/CarsHead';
 import CarsBody from "./CarsBody/CarsBody";
 import CarsFooter from "./CarsFooter/CarsFooter";
-
+import LoadingSpinner from '../../ui/LoadingSpinner'
 
 
 const CarsTable = () => {
-  const { list } = useSelector(({ cars }) => cars);
+  const { list, isLoading } = useSelector(({ cars }) => cars);
   return (
     <>
-      <TableBox padding='3px 0'>
-        <Table>
+      <TableBox padding='3px 0' >
+        <Table forsticky='hidden'>
           <CarsHead />
           <CarsBody />
           <CarsFooter padding='0' />

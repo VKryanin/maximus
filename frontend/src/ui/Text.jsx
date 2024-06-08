@@ -27,6 +27,7 @@ export const TextContainer = styled.p`
   cursor: ${(p) => (p.cursor ? p.cursor : '')};
   width: ${(p) => (p.width ? p.width : '')};
   height: ${(p) => (p.height ? p.height : '')};
+  transition: all .3s ease-in-out .3s;
 
   ${(p) =>
     p.ellipsis

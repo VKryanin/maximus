@@ -9,7 +9,7 @@ const initialState = {
   page: 1,
   pageSize: 20,
   current: 0,
-  marks: [],
+  models: [],
 };
 
 export const getCars = createAsyncThunk(
@@ -53,6 +53,14 @@ const carsSlice = createSlice({
     setPageSize(state, action) {
       state.pageSize = action.payload;
     },
+    setCars(state, action) {
+      const { model, mark } = action.payload;
+      const originalList = state.staticMarks;
+      state.list = originalList.filter(
+        (car) =>
+          car.mark === mark && model.some((model) => car.model.includes(model))
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getCars.pending, (state) => {
@@ -62,7 +70,9 @@ const carsSlice = createSlice({
       state.list = payload.data;
       state.isLoading = false;
       state.total = payload.data.length;
-      state.marks = Array.from(new Set(payload.data.map(({ mark }) => mark)));
+      state.models = Array.from(
+        new Set(payload.data.map(({ model }) => model))
+      );
       state.staticMarks = payload.data;
     });
     builder.addCase(getCars.rejected, (state) => {
@@ -82,5 +92,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setPage, setPageSize } = carsSlice.actions;
+export const { setPage, setPageSize, setCars } = carsSlice.actions;
 export default carsSlice.reducer;

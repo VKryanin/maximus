@@ -8,7 +8,7 @@ export const TableContainer = styled.table`
   transition: all 0.2s linear;
   line-height: 1.1;
 
-  overflow: ${(p) => (p.forsticky ? 'visible' : 'auto')};
+  overflow: ${(p) => (p.forsticky ? p.forsticky : 'auto')};
 
   width: ${(p) => (p.width ? p.width : 'fit-content')};
   max-width: ${(p) => (p.maxWidth ? p.maxWidth : 'max-content')};
@@ -43,6 +43,7 @@ const Table = ({
   forsticky,
   maxWidth,
   minWidth,
+  overflow
 }) => (
 
   <TableContainer
@@ -62,6 +63,7 @@ const Table = ({
     forsticky={forsticky}
     maxWidth={maxWidth}
     minWidth={minWidth}
+    overflow={overflow}
   >
     {children}
   </TableContainer>
