@@ -10,6 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const { staticMarks } = useSelector(({ cars }) => cars);
   const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedModels, setSelectedModels] = useState([]);
 
   const countBrands = () => {
     const brandCounts = {};
@@ -28,14 +29,17 @@ const Header = () => {
   const handleBrandClick = (brand) => {
     if (selectedBrand === brand) {
       setSelectedBrand(null);
+      setSelectedModels([]);
       dispatch(getCars())
     } else {
       setSelectedBrand(brand);
+      setSelectedModels([]);
       dispatch(marksCollection({ body: { marks: [brand] } }));
     }
   };
 
   const handleModelSelectChange = (value) => {
+    setSelectedModels(value);
     if (value.length) {
       dispatch(setCars({ model: value, mark: selectedBrand }))
     } else {
@@ -78,6 +82,7 @@ const Header = () => {
           onChange={handleModelSelectChange}
           options={uniqueModels}
           disabled={!selectedBrand}
+          value={selectedModels}
         />
       </Space>
 

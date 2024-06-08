@@ -14,9 +14,9 @@ const CarsRow = ({ item }) => {
   return (
     <TableBodyRow columntemplate={columnTemplateBody.join(" ")}>
       <TableBodyRowCell>{_id}</TableBodyRowCell>
-      <TableBodyRowCell>{`${mark} ${model}`}</TableBodyRowCell>
+      <TableBodyRowCell>{`${mark} ${model ? model : ''}`}</TableBodyRowCell>
       <TableBodyRowCell>{`${drive} (${engine.power} л.с.)`}</TableBodyRowCell>
-      <TableBodyRowCell>{equipmentName}</TableBodyRowCell>
+      <TableBodyRowCell title={equipmentName}>{equipmentName}</TableBodyRowCell>
       <TableBodyRowCell>{price.toLocaleString('ru-RU')} &#8381;</TableBodyRowCell>
       <TableBodyRowCell>{formatDateTime(createdAt)}</TableBodyRowCell>
     </TableBodyRow>
