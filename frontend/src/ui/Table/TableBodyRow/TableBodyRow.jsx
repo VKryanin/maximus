@@ -8,7 +8,7 @@ const TableBodyRow = ({
   height,
   onClick,
   index,
-  columnTemplate,
+  columntemplate,
   boxShadow,
   margin,
   cursor,
@@ -30,7 +30,7 @@ const TableBodyRow = ({
         height={height}
         onClick={onClick}
         index={index}
-        columnTemplate={columnTemplate}
+        columntemplate={columntemplate}
         boxShadow={boxShadow}
         margin={margin}
         cursor={cursor}
@@ -52,7 +52,7 @@ const TableBodyRow = ({
       height={height}
       onClick={onClick}
       index={index}
-      columnTemplate={columnTemplate}
+      columntemplate={columntemplate}
       boxShadow={boxShadow}
       margin={margin}
       cursor={cursor}

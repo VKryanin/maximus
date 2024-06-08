@@ -23,8 +23,8 @@ const TableBox = styled.div`
     p.newHeight ? `${p.newHeight}px` : p.height ? p.height : "auto"};
   padding: ${(p) => (p.padding ? p.padding : `0`)};
   margin: ${(p) => (p.margin ? p.margin : `0`)};
-  align-items: ${(p) => (p.alignItems ? p.alignItems : ``)};
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : ``)};
+  align-items: ${(p) => (p.alignitems ? p.alignitems : ``)};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : ``)};
 
   ${scrollBarMixin}
 `;

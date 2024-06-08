@@ -3,17 +3,37 @@ import { BASE_URL } from "../../utils/constants";
 
 const initialState = {
   list: [],
+  staticMarks: [],
   isLoading: false,
   total: 0,
   page: 1,
   pageSize: 20,
   current: 0,
+  marks: [],
 };
 
 export const getCars = createAsyncThunk(
   "cars/getCars",
   async (limit, thunkAPI) => {
-    const response = await fetch(`${BASE_URL}/stocks?limit=${limit}`);
+    const response = await fetch(`${BASE_URL}/stocks`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch cars");
+    }
+    const data = await response.json();
+    return data;
+  }
+);
+
+export const marksCollection = createAsyncThunk(
+  "cars/marksCollection",
+  async ({ body }, thunkAPI) => {
+    const response = await fetch(`${BASE_URL}/marksCollection`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    });
     if (!response.ok) {
       throw new Error("Failed to fetch cars");
     }
@@ -42,8 +62,21 @@ const carsSlice = createSlice({
       state.list = payload.data;
       state.isLoading = false;
       state.total = payload.data.length;
+      state.marks = Array.from(new Set(payload.data.map(({ mark }) => mark)));
+      state.staticMarks = payload.data;
     });
     builder.addCase(getCars.rejected, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(marksCollection.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(marksCollection.fulfilled, (state, { payload }) => {
+      state.list = payload.data;
+      state.isLoading = false;
+      state.total = payload.data.length;
+    });
+    builder.addCase(marksCollection.rejected, (state) => {
       state.isLoading = false;
     });
   },

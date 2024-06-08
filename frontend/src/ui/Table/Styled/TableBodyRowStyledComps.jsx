@@ -19,7 +19,7 @@ const TableBodyRowCellContainer = styled.td`
   grid-area: ${({ gridArea }) => gridArea ?? ''};
   border-bottom: ${({ borderBottom }) => borderBottom ?? ''};
 
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : 'center')};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : 'center')};
   padding: ${(p) => (p.padding ? p.padding : '0')};
   cursor: ${(p) => (p.cursor ? p.cursor : 'inherit')};
   text-shadow: ${(p) => (p.textShadow ? p.textShadow : '')};
@@ -98,7 +98,7 @@ const BoxCell = styled.div`
   align-items: center;
 
   gap: ${(p) => (p.boxCellGap ? p.boxCellGap : '')};
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : 'center')};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : 'center')};
   text-align: ${(p) => (p.textAlign ? p.textAlign : 'center')};
   white-space: ${(p) => (p.whiteSpace ? p.whiteSpace : '')};
   padding: ${(p) => (p.padding ? p.padding : '')};

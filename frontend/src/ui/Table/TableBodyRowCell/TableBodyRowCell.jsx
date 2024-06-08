@@ -19,7 +19,7 @@ const TableBodyRowCell = ({
   title,
   titleSecond,
   defaultTitle,
-  justifyContent,
+  justifycontent,
   padding,
   cursor,
   boxCellGap,
@@ -55,7 +55,7 @@ const TableBodyRowCell = ({
     onMouseEnter={onMouseEnter}
     onMouseDown={onMouseDown}
     index={index}
-    justifyContent={justifyContent}
+    justifycontent={justifycontent}
     padding={padding}
     cursor={cursor}
     hover={hover}
@@ -99,7 +99,7 @@ const TableBodyRowCell = ({
           <BoxCell
             boxCellGap={boxCellGap}
             title={title || ''}
-            justifyContent={justifyContent}
+            justifycontent={justifycontent}
             whiteSpace={whiteSpace}
             textAlign={textAlign}
             padding={padding}
@@ -172,7 +172,7 @@ const TableBodyRowCell = ({
             >
               <BoxCell
                 boxCellGap={boxCellGap}
-                justifyContent={justifyContent}
+                justifycontent={justifycontent}
                 whiteSpace={whiteSpace}
                 textAlign={textAlign}
                 padding={padding}
@@ -184,7 +184,7 @@ const TableBodyRowCell = ({
           ) : (
             <BoxCell
               boxCellGap={boxCellGap}
-              justifyContent={justifyContent}
+              justifycontent={justifycontent}
               whiteSpace={whiteSpace}
               textAlign={textAlign}
               width={width}

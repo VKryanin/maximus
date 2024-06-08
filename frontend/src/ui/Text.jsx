@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Tooltip } from 'antd';
 
-export const TextContainer = styled.span`
+export const TextContainer = styled.p`
   font-family: 'Roboto', sans-serif;
   max-width: 100%;
 
@@ -17,8 +17,8 @@ export const TextContainer = styled.span`
   margin: ${(p) => (p.margin ? p.margin : '0')};
   display: ${(p) => (p.flex ? 'flex' : '')};
   flex-direction: ${(p) => (p.column ? 'column' : 'row')};
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : '')};
-  align-items: ${(p) => (p.alignItems ? p.alignItems : '')};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : '')};
+  align-items: ${(p) => (p.alignitems ? p.alignitems : '')};
   position: ${(p) => (p.position ? p.position : '')};
   top: ${(p) => (p.top ? p.top : '')};
   left: ${(p) => (p.left ? p.left : '')};
@@ -54,8 +54,8 @@ const Text = ({
   margin,
   flex,
   column,
-  justifyContent,
-  alignItems,
+  justifycontent,
+  alignitems,
   position,
   top,
   right,
@@ -83,8 +83,8 @@ const Text = ({
           margin={margin}
           flex={flex}
           column={column}
-          justifyContent={justifyContent}
-          alignItems={alignItems}
+          justifycontent={justifycontent}
+          alignitems={alignitems}
           position={position}
           top={top}
           right={right}
@@ -115,8 +115,8 @@ const Text = ({
       margin={margin}
       flex={flex}
       column={column}
-      justifyContent={justifyContent}
-      alignItems={alignItems}
+      justifycontent={justifycontent}
+      alignitems={alignitems}
       position={position}
       top={top}
       right={right}

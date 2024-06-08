@@ -21,11 +21,11 @@ const CarsFooter = () => {
 
   return (
     <TableFooter>
-      <Box justifyContent='space-between' overflow='hidden'>
-        <Box alignItems='center'>
+      <Box justifycontent='space-between' overflow='hidden'>
+        <Box alignitems='center'>
           <Text>{`Показано записей: ${Math.min(pageSize * page, total)} из ${total}`}</Text>
         </Box>
-        <Box justifyContent='flex-end'>
+        <Box justifycontent='flex-end'>
           <Pagination
             current={page}
             pageSize={pageSize}

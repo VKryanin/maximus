@@ -37,8 +37,26 @@ const getOne = (req, res, next) => {
     .catch((err) => next(err));
 };
 
+const marksCollection = (req, res, next) => {
+  const { marks } = req.body;
+
+  if (!Array.isArray(marks) || marks.length === 0) {
+    return res.status(400).send({ error: "Массив марок отсутствует или пуст" });
+  }
+
+  const filter = { mark: { $in: marks.map((mark) => new RegExp(mark, "i")) } };
+
+  Stock.db("hrTest")
+    .collection("stock")
+    .find(filter)
+    .toArray()
+    .then((items) => res.send({ data: items }))
+    .catch((err) => next(err));
+};
+
 module.exports = {
   getAllCollection,
   filterCollection,
   getOne,
+  marksCollection,
 };

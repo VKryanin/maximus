@@ -7,8 +7,9 @@ const HeaderS = styled.header`
   display: ${(p) => (p.block ? 'block' : 'flex')};
   flex-direction: ${(p) => (p.column ? 'column' : 'row')};
   flex-flow: ${(p) => (p.flexFlow ? p.flexFlow : '')};
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : '')};
-  align-items: ${(p) => (p.alignItems ? p.alignItems : '')};
+  flex-direction: ${(p) => (p.column ? 'column' : 'row')};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : '')};
+  align-items: ${(p) => (p.alignitems ? p.alignitems : '')};
   margin: ${(p) => (p.margin ? p.margin : `0`)};
 `
 

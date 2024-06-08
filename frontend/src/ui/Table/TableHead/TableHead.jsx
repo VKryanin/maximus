@@ -14,17 +14,17 @@ const TableHeadContainer = styled.thead`
     p.boxShadow ? p.boxShadow : '0px 0px 2px 2px rgb(150 150 150 / 10%)'}; */
   box-shadow: ${(p) => (p.boxShadow ? p.boxShadow : '')};
   padding: ${(p) => (p.padding ? p.padding : '0 6px 0 3px')};
-  background: ${(p) => (p.forSticky ? '#f2f2f2' : 'white')};
+  background: ${(p) => (p.orsticky ? '#f2f2f2' : 'white')};
   top: 0;
-  z-index: ${(p) => (p.forSticky ? 17 : 1)}; ;
+  z-index: ${(p) => (p.forsticky ? 17 : 1)}; ;
 `;
 
-const TableHead = ({ children, onClick, boxShadow, padding, forSticky, fitWidth }) => (
+const TableHead = ({ children, onClick, boxShadow, padding, forsticky, fitWidth }) => (
   <TableHeadContainer
     onClick={onClick}
     boxShadow={boxShadow}
     padding={padding}
-    forSticky={forSticky}
+    forsticky={forsticky}
     fitwidth={fitWidth}
   >
     {children}

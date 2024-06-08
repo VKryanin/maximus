@@ -8,7 +8,7 @@ const TableHeadCellContainer = styled.th`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: ${(p) => (p.justifyContent ? p.justifyContent : 'center')};
+  justify-content: ${(p) => (p.justifycontent ? p.justifycontent : 'center')};
   text-align: center;
   font-size: 13px;
   cursor: default;
@@ -63,7 +63,7 @@ const TableHeadCell = ({
   info,
   infoPosTop,
   infoPosRight,
-  justifyContent,
+  justifycontent,
   borderRight,
   borderLeft,
   sticky,
@@ -78,7 +78,7 @@ const TableHeadCell = ({
     fontWeight={fontWeight}
     onClick={onClick}
     dangerShadow={dangerShadow}
-    justifyContent={justifyContent}
+    justifycontent={justifycontent}
     borderRight={borderRight}
     borderLeft={borderLeft}
     sticky={sticky}

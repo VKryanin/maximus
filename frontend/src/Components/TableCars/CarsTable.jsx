@@ -10,7 +10,6 @@ import CarsFooter from "./CarsFooter/CarsFooter";
 
 const CarsTable = () => {
   const { list } = useSelector(({ cars }) => cars);
-  console.log(list.length);
   return (
     <>
       <TableBox padding='3px 0'>

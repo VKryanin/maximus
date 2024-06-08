@@ -12,7 +12,7 @@ const CarsRow = ({ item }) => {
     price,
     createdAt } = item
   return (
-    <TableBodyRow columnTemplate={columnTemplateBody.join(' ')}>
+    <TableBodyRow columntemplate={columnTemplateBody.join(" ")}>
       <TableBodyRowCell>{_id}</TableBodyRowCell>
       <TableBodyRowCell>{`${mark} ${model}`}</TableBodyRowCell>
       <TableBodyRowCell>{`${drive} (${engine.power} л.с.)`}</TableBodyRowCell>

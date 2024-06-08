@@ -5,11 +5,11 @@ import { scrollBarMixin } from '../../../utils/Mixins';
 export const TableBodyContainer = styled.tbody`
   display: flex;
   flex-direction: column;
-  align-items: ${(p) => (p.alignItems ? p.alignItems : 'center')};
+  align-items: ${(p) => (p.alignitems ? p.alignitems : 'center')};
   transition: all 0.2s linear;
   width: 100%;
   /* width: fit-content; */
-  overflow: ${(p) => (p.forSticky ? 'visible' : 'auto')};
+  overflow: ${(p) => (p.forsticky ? 'visible' : 'auto')};
 
   scrollbar-gutter: ${(p) => (p.scrollbarGutter ? p.scrollbarGutter : 'stable')};
   height: ${(p) => (p.height ? p.height : 'auto')};
@@ -36,8 +36,8 @@ const TableBody = forwardRef(
       padding,
       boxShadow,
       scrollbarGutter,
-      forSticky,
-      alignItems,
+      forsticky,
+      alignitems,
     },
     ref
   ) => (
@@ -48,10 +48,10 @@ const TableBody = forwardRef(
       padding={padding}
       boxShadow={boxShadow}
       scrollbarGutter={scrollbarGutter}
-      forSticky={forSticky}
-      alignItems={alignItems}
+      forsticky={forsticky}
+      alignitems={alignitems}
       ref={ref}
-      orSticky
+    // orsticky
     >
       {children}
     </TableBodyContainer>

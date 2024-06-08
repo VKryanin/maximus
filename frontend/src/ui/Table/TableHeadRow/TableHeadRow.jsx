@@ -12,7 +12,7 @@ export const TableHeadRowContainer = styled.tr`
   min-height: ${(p) => (p.minHeight ? p.minHeight : '32px')};
   /* background-color: ${(p) => (p.backgroundColor ? p.backgroundColor : '#dad8d8')}; */
   background-color: ${(p) => (p.backgroundColor ? p.backgroundColor : 'rgb(169 169 169 / 15%)')};
-  grid-template-columns: ${(p) => (p.columnTemplate ? p.columnTemplate : '')};
+  grid-template-columns: ${(p) => (p.columntemplate ? p.columntemplate : '')};
   grid-template-areas: ${(p) => (p.gridTemplateAreas ? p.gridTemplateAreas : '')};
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
@@ -36,7 +36,7 @@ export const TableHeadRowContainer = styled.tr`
 const TableHeadRow = ({
   children,
   onClick,
-  columnTemplate,
+  columntemplate,
   backgroundColor,
   minHeight,
   borderTop,
@@ -46,7 +46,7 @@ const TableHeadRow = ({
 }) => (
   <TableHeadRowContainer
     onClick={onClick}
-    columnTemplate={columnTemplate}
+    columntemplate={columntemplate}
     backgroundColor={backgroundColor}
     minHeight={minHeight}
     borderTop={borderTop}

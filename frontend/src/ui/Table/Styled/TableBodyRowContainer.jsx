@@ -6,7 +6,7 @@ const TableBodyRowContainer = styled.tr`
   width: ${(p) => p.width ?? '100%'};
   box-sizing: border-box;
 
-  grid-template-columns: ${(p) => (p.columnTemplate ? p.columnTemplate : '')};
+  grid-template-columns: ${(p) => (p.columntemplate ? p.columntemplate : '')};
   min-height: ${(p) => (p.minHeight ? p.minHeight : '32px')};
   height: ${(p) => (p.height ? p.height : '')};
   margin: ${(p) => (p.margin ? p.margin : 'auto')};
